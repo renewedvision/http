@@ -142,7 +142,7 @@ impl Authority {
             return Err(ErrorKind::InvalidAuthority.into());
         }
 
-        if colon_cnt > 1 {
+        if colon_cnt > MAX_COLONS {
             // Things like 'localhost:8080:3030' are rejected.
             return Err(ErrorKind::InvalidAuthority.into());
         }
